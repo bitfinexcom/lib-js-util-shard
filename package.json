@@ -1,0 +1,25 @@
+{
+  "name": "@bitfinexcom/lib-js-util-shard",
+  "version": "1.0.0",
+  "description": "Sharding utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitfinexcom/lib-js-util-shard.git"
+  },
+  "keywords": [
+    "sharding"
+  ],
+  "author": "prdn",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "crc-32": "^1.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1",
+    "standard": "^16.0.3"
+  }
+}
