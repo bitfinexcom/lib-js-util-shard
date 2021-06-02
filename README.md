@@ -1,14 +1,17 @@
 # lib-js-util-shard
 
-A library to determine shard indexes
+A library to determine shard indexes, uses a LRU cache for caching calculated values
 
 ```js
 const nodeCount = 3
 
+const u = new UtilShard({
+  // max: 5000,
+  // maxAge: maxAgeInMilliseconds
+})
 // get the numeric shard index for 'BTCUSD'
-const shardIndex = getStrRingIx('BTCUSD', nodeCount)
+const shardIndex = u.getStrRingIx('BTCUSD', nodeCount)
 ```
-
 
 ## API
 

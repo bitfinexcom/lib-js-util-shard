@@ -16,10 +16,11 @@
   "author": "prdn",
   "license": "Apache-2.0",
   "dependencies": {
-    "crc-32": "^1.2.0"
+    "crc-32": "^1.2.0",
+    "lru": "^3.1.0"
   },
   "devDependencies": {
-    "mocha": "^8.2.1",
+    "mocha": "^8.4.0",
     "standard": "^16.0.3"
   }
 }

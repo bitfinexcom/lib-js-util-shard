@@ -1,10 +1,11 @@
 'use strict'
 
 const CRC = require('crc-32')
+const LRU = require('lru')
 
 class UtilShard {
-  constructor () {
-    this.mem = {}
+  constructor (opts = {}) {
+    this.mem = new LRU(opts)
   }
 
   getRingIx (v, n) {
@@ -17,12 +18,16 @@ class UtilShard {
 
   getStrVal (s) {
     const k = `s2i-${s}`
-    let v = this.mem[k]
+
+    let v = this.mem.get(k)
+
     if (v !== undefined) {
       return v
     }
 
-    v = this.mem[k] = Math.abs(CRC.str(s))
+    v = Math.abs(CRC.str(s))
+    this.mem.set(k, v)
+
     return v
   }
 }
