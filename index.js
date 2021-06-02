@@ -4,7 +4,7 @@ const CRC = require('crc-32')
 const LRU = require('lru')
 
 class UtilShard {
-  constructor (opts) {
+  constructor (opts = {}) {
     this.mem = new LRU(opts)
   }
 
